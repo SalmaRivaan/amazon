@@ -35,9 +35,9 @@ const[{},dispatch] = useStateValue();
          </div>
          
             <img  className="product__img" src={image} alt="" />
-            <div className="product__div">
+           
 
-            
+            <div className="product__div">   
             <button className="product__btn" onClick={addToBasket} >Add to basket</button>
             </div>
      </div>

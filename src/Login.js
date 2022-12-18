@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
-import Header from './Header';
+
 import "./Login.css";
-import {Link,useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { auth } from "./firebase";
 
 function Login() {
-    const history = useNavigate();
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const login = e => {
+    const signIn = e => {
         e.preventDefault();
-
-        auth
+         auth
             .signInWithEmailAndPassword(email, password)
-            .then(auth => {
-                history.push('/')
+            .then((auth) => {
+                navigate("/");
             })
             .catch(error => alert(error.message))
     }
@@ -28,7 +27,7 @@ function Login() {
             .then((auth) => {
                 // it successfully created a new user with email and password
                 if (auth) {
-                    history.push('/')
+                    navigate("/");
                 }
             })
             .catch(error => alert(error.message))
@@ -36,7 +35,7 @@ function Login() {
 
     return (
         <div className='login'>
-            <Header/>
+            
             <Link to='/'>
                 <img
                     className="login__logo" alt=""
@@ -54,7 +53,7 @@ function Login() {
                     <h5>Password</h5>
                     <input type='password' value={password} onChange={e => setPassword(e.target.value)} />
 
-                    <button type='submit' className='login__signInButton' onClick={login}>Sign In</button>
+                    <button type='submit' className='login__signInButton' onClick={signIn}>Sign In</button>
                 </form>
 
                 <p>

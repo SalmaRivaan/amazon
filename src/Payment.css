@@ -1,0 +1,32 @@
+.payment{
+    background-color: white;
+}
+.payment__checkout {
+    text-align: center;
+    padding: 10px;
+    font-weight:400;
+    background-color: rgb(234,237,237);
+    border-bottom: 1px solid lightgray;
+}
+.payment__checkout a{
+    text-decoration: none;
+}
+.payment__section{
+    display:flex;
+    padding: 20px;
+    
+    border-bottom: 1px solid lightblue;
+
+}
+.payment__title{
+    flex: 0.2;
+}
+.payment__address{
+    flex : 0.8;
+}
+.payment__items{
+flex : 0.8;
+}
+.payment__details{
+    flex:0.8;
+}
