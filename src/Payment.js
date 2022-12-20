@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./reducer";
-//import axios from "./axios";
+import axios from "./axios";
 const Payment = () => {
   const [{ basket, user }, dispatch] = useStateValue();
   const Navigate = useNavigate();
@@ -47,18 +47,18 @@ const Payment = () => {
     setError(event.error ? event.error.message : "");
   };
   {
-    /*useEffect(() => {
-    //generate the special stripe secret which allows us to charge a customer
-    const getClientSecret = async () => {
-      const response = await axios({
-        method: "post",
-        url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
-      });
-      setClientSecret(response.data.clientSecret);
-    };
+    useEffect(() => {
+      //generate the special stripe secret which allows us to charge a customer
+      const getClientSecret = async () => {
+        const response = await axios({
+          method: "post",
+          url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
+        });
+        setClientSecret(response.data.clientSecret);
+      };
 
-    getClientSecret();
-  }, [basket]);*/
+      getClientSecret();
+    }, [basket]);
   }
   return (
     <div>

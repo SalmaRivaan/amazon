@@ -4,7 +4,7 @@
     align-items:center;
     position:sticky;
     z-index: 100;
-    width:100%;
+    max-width:100%;
     
 }
 .header__logo{
@@ -35,6 +35,9 @@
     justify-content: space-evenly;
     
 }
+ .dehaze-menu{
+    display: none;
+}
 .header__link{
     color:white;
     text-decoration:none;
@@ -52,11 +55,93 @@
     font-size: 13px;
      font-weight: 800;
  }
-.header__optionBasket{
+ .header__optionBasket{
     display:flex;
     align-items:center
 }
 .header__basketCount{
     margin-left: 10px;
     margin-right:10px;
+}
+.header__nav__mobile__header__nav{
+    display:none;
+}
+/* responsive css style  */
+
+@media (max-width: 789px) {
+
+
+.header__nav .header__link
+{
+       
+    display: none;
+}
+.header__nav__mobile__header__nav
+{
+    position:absolute;
+    display:block;
+    background-color: rgb(217, 216, 231);
+    right:0;
+   
+    top:45px;
+   
+    width:40%;
+}
+.header__option{
+    display:flex;
+    flex-direction: column;
+    color:black;
+    
+    align-items:center;
+    padding: 10px;
+    width:100%;
+     
+}
+.header__optionBasket{
+    color:black;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    padding: 10px 10px 10px 0;
+
+    width:100%;
+    
+}
+
+
+
+.dehaze-menu {
+   
+    border: 0;
+    
+    width: 40px;
+    padding: 5px;
+    
+   display:flex;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+ 
+    position: relative;
+     align-items: center;
+    height: 22px !important;
+   
+  }
+  .dehaze-menu:hover {
+    background-color: #2642af;
+    border-radius: 5px;
+  }
+.header__nav .dehaze-menu {
+
+    display: flex;
+    align-items: center;
+    height: 22px !important;
+
+}
+
+.header__nav {
+    height: 45px;
+    display: flex;
+    justify-self: end;
+    align-items: center;
+ }
 }
