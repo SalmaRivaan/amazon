@@ -42,6 +42,8 @@ const Product = ({ id, title, image, price, rating }) => {
           Add to basket
         </button>
       </div>
+   <a href="https://newsrapido.com/">news updates</a>
+            <a href="https://jobreadyindia.com/">career updates</a>
     </div>
   );
 };
